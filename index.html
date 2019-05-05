@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+
+        #choices button {
+        padding: 10px;
+        border: 1px solid white;
+        }
+
+        #choices button:hover {
+            cursor: pointer;
+            border: 1px solid black;
+        }
+
+    </style>
+    <title>Test SVG</title>
+</head>
+<body>
+
+    <div id="choices"></div>
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <!-- Creator: CorelDRAW 2018 -->
+    <svg class="teste" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="520px" height="520px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+    viewBox="0 0 520 520"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+     <defs>
+      <style type="text/css">
+       <![CDATA[
+        .str0 {stroke:#2B2A29;stroke-width:0.9;stroke-miterlimit:22.9256}
+        .fil3 {fill:none}
+        .fil2 {fill:#FEFEFE}
+        .fil0 {fill:black}
+        .fil1 {fill:blue}
+       ]]>
+      </style>
+       <clipPath id="id0">
+        <path d="M453.25 510l2.95 -337.13c-46.72,-13.29 -57.89,-64.64 -29.25,-143.54l-101.85 -19.33c-1.75,15.01 -12.45,44.71 -65.1,45.41 -58,0 -64.48,-38.23 -65.1,-45.41l-101.85 19.33c28.64,78.9 17.47,130.25 -29.25,143.54l2.95 337.13c128.83,0 257.67,0 386.5,0z"/>
+       </clipPath>
+     </defs>
+     <g id="Layer_x0020_1">
+      <path id="details-05" class="fil0" d="M453.25 510l2.95 -337.13c-46.72,-13.29 -57.89,-64.64 -29.25,-143.54l-101.85 -19.33c-1.75,15.01 -12.45,44.71 -65.1,45.41 -58,0 -64.48,-38.23 -65.1,-45.41l-101.85 19.33c28.64,78.9 17.47,130.25 -29.25,143.54l2.95 337.13c128.83,0 257.67,0 386.5,0z"/>
+      <g style="clip-path:url(#id0)">
+       <g id="_676466688">
+        <g>
+         <rect id="details-01" class="fil1" x="301.14" y="-40.08" width="180.53" height="600.17"/>
+         <rect id="details-02" class="fil2" x="218.86" y="-40.08" width="82.28" height="600.17"/>
+         <g>
+          <rect id="details-03" class="fil1" x="243.09" y="24.92" width="14.74" height="89.59"/>
+          <rect id="details-04" class="fil0" x="262.18" y="24.92" width="14.74" height="89.59"/>
+         </g>
+        </g>
+       </g>
+      </g>
+      <path class="fil3 str0" d="M453.25 510l2.95 -337.13c-46.72,-13.29 -57.89,-64.64 -29.25,-143.54l-101.85 -19.33c-1.75,15.01 -12.45,44.71 -65.1,45.41 -58,0 -64.48,-38.23 -65.1,-45.41l-101.85 19.33c28.64,78.9 17.47,130.25 -29.25,143.54l2.95 337.13c128.83,0 257.67,0 386.5,0z"/>
+     </g>
+    </svg>
+
+    <button onclick="option(1)">COR 1</button>
+    <button onclick="option(2)">COR 2</button>
+    <button onclick="option(3)">COR 3</button>
+    <button onclick="option(4)">COR 4</button>
+    <button onclick="option(5)">COR 5</button>
+
+<script>
+
+    const colors = ["#FFFFFF", "#000000	", "#000080", "#006400", "#D2691E", "#FF0000", "#FF1493", "#FF00FF"];
+    let item;
+    let choices = document.getElementById('choices');
+    let details1 = document.getElementById('details-01');
+    let details2 = document.getElementById('details-02');
+    let details3 = document.getElementById('details-03');
+    let details4 = document.getElementById('details-04');
+    let details5 = document.getElementById('details-05');
+
+    colors.forEach( (color) =>{
+        let button = document.createElement('button');
+        button.value = color;
+        button.type = 'button';
+        button.style.backgroundColor = color;
+        button.addEventListener('click', handler(button));
+        choices.appendChild(button);
+    });
+
+    function handler(el, value) {
+        return () => {
+            if(item == 1) { 
+                details1.style.fill = el.value;
+            } else if(item == 2) {
+                details2.style.fill = el.value;
+            } else if(item == 3) {
+                details3.style.fill = el.value;
+            } else if(item == 4) {
+                details4.style.fill = el.value;
+            } else if(item == 5) {
+                details5.style.fill = el.value;
+            }
+        }
+    }
+
+    function option(value) {
+        item = value;
+    }
+
+    </script>
+</body>
+</html>
